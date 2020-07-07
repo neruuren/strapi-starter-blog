@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "categories",
   "info": {
@@ -9,13 +10,27 @@
     "timestamps": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true
     },
     "articles": {
       "via": "category",
       "collection": "article"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
